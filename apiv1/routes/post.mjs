@@ -55,7 +55,7 @@ router.get('/post/:postId', (req, res, next) => {
 //GET  all   POSTS   /api/v1/posts/
 router.get('/posts', async(req, res, next) => {
     const cursor = col.find({});
-    let results = await cursor.toArray()
+    let results = await cursor.toArray().reverse()
     console.log("results: ", results);
     res.send(results);
     res.send(posts);
